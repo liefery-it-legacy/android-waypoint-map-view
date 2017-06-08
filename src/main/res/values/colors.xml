@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <color name="waypoint_map_view_route_color_planned">#b0bec5</color>
+    <color name="waypoint_map_view_route_color_border_planned">#9198a2</color>
+    <color name="waypoint_map_view_route_color_actual">#00b2ff</color>
+    <color name="waypoint_map_view_route_color_border_actual">#2773c5</color>
+
+</resources>

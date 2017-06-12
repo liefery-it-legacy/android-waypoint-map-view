@@ -2,7 +2,7 @@
 
 <resources>
 
-    <dimen name="waypoint_map_view_marker_size">24dp</dimen>
+    <dimen name="waypoint_map_view_marker_size">28dp</dimen>
     <dimen name="waypoint_map_view_route_width">5dp</dimen>
     <dimen name="waypoint_map_view_route_width_border">4dp</dimen>
     <dimen name="waypoint_map_view_zoom_padding">48dp</dimen>

@@ -15,9 +15,7 @@ public class FreeWaypointMap extends WaypointMap {
     }
 
     @Override
-    protected void initialize( Context context ) {
-        super.initialize( context );
-
+    protected void initialize() {
         UiSettings settings = map.getUiSettings();
 
         settings.setAllGesturesEnabled( true );

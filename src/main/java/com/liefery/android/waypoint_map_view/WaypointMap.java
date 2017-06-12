@@ -58,6 +58,7 @@ public abstract class WaypointMap {
     public WaypointMap( Context context, GoogleMap map ) {
         this.map = map;
         initialize( context );
+        initialize();
     }
 
     protected void initialize( Context context ) {
@@ -92,6 +93,8 @@ public abstract class WaypointMap {
             map.setMyLocationEnabled( true );
     }
 
+    abstract protected void initialize();
+
     private boolean isLocationPermissionGranted( Context context ) {
         int coarse = ContextCompat.checkSelfPermission(
             context,
@@ -101,6 +104,11 @@ public abstract class WaypointMap {
             ACCESS_FINE_LOCATION );
 
         return coarse == PERMISSION_GRANTED || fine == PERMISSION_GRANTED;
+    }
+
+    public void clear() {
+        map.clear();
+        initialize();
     }
 
     public GoogleMap getGoogleMap() {

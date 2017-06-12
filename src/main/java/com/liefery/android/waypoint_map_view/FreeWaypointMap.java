@@ -6,7 +6,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Marker;
 
 public class FreeWaypointMap extends WaypointMap {
     public FreeWaypointMap( Context context, GoogleMap map ) {
@@ -28,7 +28,7 @@ public class FreeWaypointMap extends WaypointMap {
     public CameraUpdate adjustZoomToMarkers() {
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
-        for ( MarkerOptions marker : markers ) {
+        for ( Marker marker : markers ) {
             builder.include( marker.getPosition() );
         }
 

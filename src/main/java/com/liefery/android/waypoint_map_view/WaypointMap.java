@@ -53,7 +53,7 @@ public abstract class WaypointMap {
     /**
      * List of markers added to the map
      */
-    protected ArrayList<MarkerOptions> markers = new ArrayList<>();
+    protected ArrayList<Marker> markers = new ArrayList<>();
 
     public WaypointMap( Context context, GoogleMap map ) {
         this.map = map;
@@ -179,7 +179,7 @@ public abstract class WaypointMap {
         this.zoomPadding = zoomPadding;
     }
 
-    public void addWaypoint( StopBadge badge, LatLng position ) {
+    public Marker addWaypoint( StopBadge badge, LatLng position ) {
         Bitmap bitmap = badge.export( getMarkerSize() );
         BitmapDescriptor icon = BitmapDescriptorFactory.fromBitmap( bitmap );
 
@@ -188,8 +188,9 @@ public abstract class WaypointMap {
         options.icon( icon );
         options.position( position );
 
-        markers.add( options );
-        map.addMarker( options );
+        Marker marker = map.addMarker( options );
+        markers.add( marker );
+        return marker;
     }
 
     public void addRouteActual( String polyline ) {

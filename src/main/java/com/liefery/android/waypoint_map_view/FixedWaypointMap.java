@@ -4,15 +4,18 @@ import android.content.Context;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 
 public class FixedWaypointMap extends WaypointMap {
-    public FixedWaypointMap( Context context, GoogleMap map, LatLng focus ) {
+    private final int defaultFocusZoom;
+
+    public FixedWaypointMap( Context context, GoogleMap map ) {
         super( context, map );
-        setUpFocus( focus );
+
+        this.defaultFocusZoom = context.getResources().getInteger(
+            R.integer.fixed_waypoint_map_focus_zoom );
     }
 
     @Override
@@ -28,12 +31,18 @@ public class FixedWaypointMap extends WaypointMap {
         settings.setMyLocationButtonEnabled( false );
     }
 
-    private void setUpFocus( LatLng focus ) {
-        CameraUpdate update = CameraUpdateFactory.newLatLngZoom( focus, 16 );
+    public void setFocus( LatLng focus, int zoom ) {
+        CameraUpdate update = CameraUpdateFactory.newLatLngZoom( focus, zoom );
         map.moveCamera( update );
     }
 
+    public void setFocus( LatLng focus ) {
+        setFocus( focus, defaultFocusZoom );
+    }
+
     public void setOnMarkerClickListener( final OnMarkerClickListener listener ) {
+        // Custom marker to prevent the map focus from moving to the clicked
+        // marker
         map.setOnMarkerClickListener( new GoogleMap.OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick( Marker marker ) {

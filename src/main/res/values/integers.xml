@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+    <integer name="fixed_waypoint_map_focus_zoom">16</integer>
+
+</resources>

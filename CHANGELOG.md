@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.3
+
+_2017-08-30_
+
+ *  Upgrade to icon-badge 1.2.0
+ *  Upgrade to sbt-android 1.7.9
+ *  Upgrade to sbt 0.13.16
+
 ## 1.0.1
 
 _2017-06-29_

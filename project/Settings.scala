@@ -12,7 +12,10 @@ object Settings {
         minSdkVersion := "14",
         organization := "com.liefery.android",
         platformTarget := "android-26",
-        resolvers += "jitpack" at "https://jitpack.io",
+        resolvers ++=
+            ( "Google Maven" at "https://maven.google.com" ) ::
+            ( "jitpack" at "https://jitpack.io" ) ::
+            Nil,
         scalaVersion := "2.11.11",
         targetSdkVersion := "26"
     )

@@ -9,7 +9,7 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.maps.android.PolyUtil;
-import com.liefery.android.stop_badge.StopBadge;
+import com.liefery.android.icon_badge.IconBadge;
 import com.liefery.android.waypoint_map_view.FixedWaypointMap;
 import com.liefery.android.waypoint_map_view.FreeWaypointMap;
 import com.liefery.android.waypoint_map_view.WaypointMap;
@@ -89,10 +89,10 @@ public class Activity extends android.app.Activity {
         LatLng position1 = new LatLng( 52.4953633, 13.3495338 );
         LatLng position2 = new LatLng( 52.4963643, 13.3485328 );
 
-        StopBadge badge1 = new StopBadge();
-        badge1.setStopNumber( 1 );
-        StopBadge badge2 = new StopBadge();
-        badge2.setStopNumber( 2 );
+        IconBadge badge1 = new IconBadge();
+        badge1.setNumber( 1 );
+        IconBadge badge2 = new IconBadge();
+        badge2.setNumber( 2 );
 
         map.addWaypoint( badge1, position1 );
         map.addWaypoint( badge2, position2 );
@@ -146,10 +146,7 @@ public class Activity extends android.app.Activity {
         @Override
         public void onMapReady( GoogleMap googleMap ) {
             LatLng focus = new LatLng( 52.4963643, 13.3485328 );
-            final WaypointMap map = new FixedWaypointMap(
-                context,
-                googleMap,
-                focus );
+            final WaypointMap map = new FixedWaypointMap( context, googleMap );
             configureMap( map );
         }
     }

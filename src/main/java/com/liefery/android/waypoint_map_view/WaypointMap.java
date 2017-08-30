@@ -3,20 +3,16 @@ package com.liefery.android.waypoint_map_view;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.support.annotation.ColorInt;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.*;
 import com.google.maps.android.PolyUtil;
-import com.liefery.android.stop_badge.StopBadge;
+import com.liefery.android.icon_badge.IconBadge;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Pattern;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
@@ -179,7 +175,7 @@ public abstract class WaypointMap {
         this.zoomPadding = zoomPadding;
     }
 
-    public Marker addWaypoint( StopBadge badge, LatLng position ) {
+    public Marker addWaypoint( IconBadge badge, LatLng position ) {
         Bitmap bitmap = badge.export( getMarkerSize() );
         BitmapDescriptor icon = BitmapDescriptorFactory.fromBitmap( bitmap );
 

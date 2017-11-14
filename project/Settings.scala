@@ -16,7 +16,7 @@ object Settings {
             ( "Google Maven" at "https://maven.google.com" ) ::
             ( "jitpack" at "https://jitpack.io" ) ::
             Nil,
-        scalaVersion := "2.11.11",
+        scalaVersion := "2.11.12",
         targetSdkVersion := "26"
     )
 }

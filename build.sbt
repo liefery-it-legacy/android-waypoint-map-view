@@ -3,7 +3,7 @@ lazy val root = project.in( file( "." ) )
     .settings( Settings.common )
     .settings(
         libraryDependencies ++=
-            "com.github.liefery" % "android-icon-badge" % "1.2.0" ::
+            "com.github.liefery" % "android-icon-badge" % "1.3.1" ::
             ( "com.google.android.gms" % "play-services-maps" % "11.2.0" exclude( "com.android.support", "support-v4" ) ) ::
             "com.google.maps.android" % "android-maps-utils" % "0.5" ::
             Nil,

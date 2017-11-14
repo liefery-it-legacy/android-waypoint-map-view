@@ -1,6 +1,7 @@
 package com.liefery.android.waypoint_map_view.sample;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import com.google.android.gms.maps.CameraUpdate;
@@ -90,8 +91,18 @@ public class Activity extends android.app.Activity {
         LatLng position2 = new LatLng( 52.4963643, 13.3485328 );
 
         IconBadge badge1 = new IconBadge( context );
+        badge1.setBackgroundShapeCircle();
+        badge1.setBackgroundShapeColor( Color.BLACK );
+        badge1.setElevation( context.getResources().getDimension(
+            R.dimen.marker_shadow ) );
+        badge1.setForegroundShapeColor( Color.WHITE );
         badge1.setNumber( 1 );
         IconBadge badge2 = new IconBadge( context );
+        badge2.setBackgroundShapePin();
+        badge2.setBackgroundShapeColor( Color.BLACK );
+        badge2.setElevation( context.getResources().getDimension(
+            R.dimen.marker_shadow ) );
+        badge2.setForegroundShapeColor( Color.WHITE );
         badge2.setNumber( 2 );
 
         map.addWaypoint( badge1, position1 );
@@ -146,7 +157,10 @@ public class Activity extends android.app.Activity {
         @Override
         public void onMapReady( GoogleMap googleMap ) {
             LatLng focus = new LatLng( 52.4963643, 13.3485328 );
-            final WaypointMap map = new FixedWaypointMap( context, googleMap );
+            final FixedWaypointMap map = new FixedWaypointMap(
+                context,
+                googleMap );
+            map.setFocus( focus );
             configureMap( context, map );
         }
     }

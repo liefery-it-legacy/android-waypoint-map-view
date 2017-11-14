@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.0.4
+
+_2017-11-14_
+
+ *  Upgrade to icon-badge 1.3.1
+ *  Upgrade to sbt-android 1.7.10
+ *  Upgrade to scala 2.11.12
+
 ## 1.0.3
 
 _2017-08-30_

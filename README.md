@@ -13,7 +13,7 @@
 ```scala
 resolvers += "jitpack" at "https://jitpack.io"
 
-libraryDependencies += "com.github.liefery" % "android-waypoint-map-view" % "1.0.3"
+libraryDependencies += "com.github.liefery" % "android-waypoint-map-view" % "1.0.4"
 ```
 
 ### Gradle
@@ -27,7 +27,7 @@ allprojects {
 }
 
 dependencies {
-    compile 'com.github.liefery:android-waypoint-map-view:1.0.3'
+    compile 'com.github.liefery:android-waypoint-map-view:1.0.4'
 }
 ```
 

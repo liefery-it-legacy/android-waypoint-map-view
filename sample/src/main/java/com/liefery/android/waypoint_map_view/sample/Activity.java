@@ -27,8 +27,8 @@ public class Activity extends android.app.Activity {
 
         setContentView( R.layout.main );
 
-        map1 = (MapView) findViewById( R.id.map1 );
-        map2 = (MapView) findViewById( R.id.map2 );
+        map1 = findViewById( R.id.map1 );
+        map2 = findViewById( R.id.map2 );
 
         map1.onCreate( state );
         map2.onCreate( state );
@@ -85,13 +85,13 @@ public class Activity extends android.app.Activity {
         map2.onDestroy();
     }
 
-    static void configureMap( WaypointMap map ) {
+    static void configureMap( Context context, WaypointMap map ) {
         LatLng position1 = new LatLng( 52.4953633, 13.3495338 );
         LatLng position2 = new LatLng( 52.4963643, 13.3485328 );
 
-        IconBadge badge1 = new IconBadge();
+        IconBadge badge1 = new IconBadge( context );
         badge1.setNumber( 1 );
-        IconBadge badge2 = new IconBadge();
+        IconBadge badge2 = new IconBadge( context );
         badge2.setNumber( 2 );
 
         map.addWaypoint( badge1, position1 );
@@ -124,7 +124,7 @@ public class Activity extends android.app.Activity {
         @Override
         public void onMapReady( GoogleMap googleMap ) {
             final FreeWaypointMap map = new FreeWaypointMap( context, googleMap );
-            configureMap( map );
+            configureMap( context, map );
 
             new Handler().post( new Runnable() {
                 @Override
@@ -147,7 +147,7 @@ public class Activity extends android.app.Activity {
         public void onMapReady( GoogleMap googleMap ) {
             LatLng focus = new LatLng( 52.4963643, 13.3485328 );
             final WaypointMap map = new FixedWaypointMap( context, googleMap );
-            configureMap( map );
+            configureMap( context, map );
         }
     }
 }

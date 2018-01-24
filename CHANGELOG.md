@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.5
+
+_2018-01-24_
+
+ * Upgrade to play-services-maps 11.8.0
+ * Upgrade to android-icon-badge 1.3.2
+
 ## 1.0.4
 
 _2017-11-14_

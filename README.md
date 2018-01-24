@@ -2,7 +2,7 @@
 
 > Efficient tour rendering
 
-[![](https://jitpack.io/v/liefery/android-waypoint-map-view.svg)](https://jitpack.io/#liefery/android-stop-badge)
+[![](https://jitpack.io/v/liefery/android-waypoint-map-view.svg)](https://jitpack.io/#liefery/android-waypoint-map-view)
 
 ![Sample app screenshot](https://liefery.github.io/android-waypoint-map-view/screenshot.png)
 

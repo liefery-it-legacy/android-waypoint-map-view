@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.1.0
+
+_2018-04-24_
+
+ * Upgrade to android platform 27
+
 ## 1.0.5
 
 _2018-01-24_

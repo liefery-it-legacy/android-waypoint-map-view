@@ -3,8 +3,8 @@ lazy val root = project.in( file( "." ) )
     .settings( Settings.common )
     .settings(
         libraryDependencies ++=
-            "com.github.liefery" % "android-icon-badge" % "1.3.2" ::
-            ( "com.google.android.gms" % "play-services-maps" % "11.8.0" exclude( "com.android.support", "support-v4" ) ) ::
+            "com.github.liefery" % "android-icon-badge" % "1.4.0" ::
+            ( "com.google.android.gms" % "play-services-maps" % "15.0.0" exclude( "com.android.support", "support-v4" ) ) ::
             "com.google.maps.android" % "android-maps-utils" % "0.5" ::
             Nil,
         name := "waypoint-map-view",
